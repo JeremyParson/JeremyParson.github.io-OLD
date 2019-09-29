@@ -1,4 +1,3 @@
-// Credit David Walsh (https://davidwalsh.name/javascript-debounce-function)
 function debounce(func, wait, immediate) {
   var timeout;
 
@@ -20,3 +19,21 @@ function debounce(func, wait, immediate) {
     if (callNow) func.apply(context, args);
   };
 }
+
+particlesJS(particles, "particles-js");
+
+const inDepthBtn = $("#In-Depthbtn");
+const firstScene = $("#webpage-firstView");
+
+inDepthBtn.on(
+  "click",
+  debounce(() => {
+    inDepthBtn.attr("disabled", true);
+    firstScene.toggleClass("fade");
+
+    firstScene.one("oanimationend msAnimationEnd animationend", e => {
+      console.log("removed firstScene", e);
+      e.currentTarget.remove();
+    });
+  }, 500)
+);
