@@ -23,7 +23,7 @@ function debounce(func, wait, immediate) {
 particlesJS(particles, "particles-js");
 
 const inDepthBtn = $("#In-Depthbtn");
-const firstScene = $("#webpage-firstView");
+const firstScene = $("#splash");
 
 inDepthBtn.on(
   "click",
