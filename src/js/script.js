@@ -24,16 +24,3 @@ particlesJS(particles, "particles-js");
 
 const inDepthBtn = $("#In-Depthbtn");
 const firstScene = $("#splash");
-
-inDepthBtn.on(
-  "click",
-  debounce(() => {
-    inDepthBtn.attr("disabled", true);
-    firstScene.toggleClass("fade");
-
-    firstScene.one("oanimationend msAnimationEnd animationend", e => {
-      console.log("removed firstScene", e);
-      e.currentTarget.remove();
-    });
-  }, 500)
-);
